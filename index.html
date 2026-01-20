@@ -33,8 +33,8 @@
         text-shadow: 2px 2px 0px #000000; /* Hard black shadow */
     }
 
-    /* 3. The New Info Box (Hours) */
-    .info-box {
+    /* 3. The New Problem Area Box (Hours) */
+    .Problem Area-box {
         padding: 10px;
         background: rgba(0, 0, 0, 0.8); /* Dark background */
         color: white;
@@ -143,7 +143,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Info"
+        "name": "Problem Area"
       },
       "geometry": {
         "type": "Polygon",
@@ -416,7 +416,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Info"
+        "name": "Problem Area"
       },
       "geometry": {
         "type": "Polygon",
@@ -689,7 +689,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Info"
+        "name": "Problem Area"
       },
       "geometry": {
         "type": "Polygon",
@@ -995,7 +995,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Info"
+        "name": "Problem Area"
       },
       "geometry": {
         "type": "Polygon",
@@ -2664,10 +2664,10 @@ L.geoJSON(yardData, {
 }).addTo(map);
 
 // 4. Hours of Operation Box
-var infoControl = L.control({position: 'bottomleft'});
+var Problem AreaControl = L.control({position: 'bottomleft'});
 
-infoControl.onAdd = function (map) {
-    var div = L.DomUtil.create('div', 'info-box');
+Problem AreaControl.onAdd = function (map) {
+    var div = L.DomUtil.create('div', 'Problem Area-box');
     div.innerHTML = `
         <strong>SHOREHAM YARD</strong><br>
         Check-In: 24/7<br>
@@ -2678,7 +2678,7 @@ infoControl.onAdd = function (map) {
     return div;
 };
 
-infoControl.addTo(map);
+Problem AreaControl.addTo(map);
 
 // 5. User Location Dot
 map.locate({setView: true, maxZoom: 17, watch: true});
