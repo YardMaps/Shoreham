@@ -3307,20 +3307,21 @@ L.geoJSON(yardData, {
 }).addTo(map);
 
 // --- 4. HOURS OF OPERATION BOX ---
-var infoControl = L.control({ position: 'topright' });
+var problemAreaControl = L.control({position: 'bottomleft'});
 
-infoControl.onAdd = function(map) {
-    var div = L.DomUtil.create('div', 'info-box');
+problemAreaControl.onAdd = function (map) {
+    var div = L.DomUtil.create('div', 'problem-area-box');
     div.innerHTML = `
-        <h4>Shoreham Yard</h4>
-        <p><strong>Hours of Operation:</strong><br>
-        Monday - Friday: 24 Hours<br>
-        Sat - Sun: Reduced Schedule</p>
-    `; 
+        <strong>SHOREHAM YARD</strong><br><br>
+        Check-In: 24/7<br><br>
+        Lift Ops (M-F): 06:00 - 22:00<br><br>
+        Lift Ops (S-S): 06:00 - 18:00<br><br>
+        Depot (M-F): 06:00 - 18:00
+    `;
     return div;
 };
 
-infoControl.addTo(map);
+problemAreaControl.addTo(map);
 
 </script>
 </body>
