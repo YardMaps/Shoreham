@@ -10,6 +10,22 @@
     <link rel="apple-touch-icon" href="https://img.icons8.com/fluency/480/shipping-container.png">
 
     <style>
+
+.demo-stamp {
+    color: rgba(255, 0, 0, 0.7);
+    border: 4px solid rgba(255, 0, 0, 0.7);
+    padding: 10px 15px;
+    font-family: 'Courier New', monospace;
+    font-size: 22px;
+    font-weight: 900;
+    text-transform: uppercase;
+    transform: rotate(-15deg);
+    pointer-events: none;
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+    background: transparent;
+    margin-top: 60px !important; 
+}
+        
     /* 1. Basic Map Setup */
     body, html { 
         height: 100%; 
@@ -107,8 +123,6 @@
 <body>
 
     <div id="map"></div>
-
-<div class="demo-stamp">INTERNAL DEMO<br>PENDING APPROVAL</div>
     
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
@@ -3435,6 +3449,15 @@
         document.addEventListener('contextmenu', function(event) {
             event.preventDefault();
         });
+
+        // --- 7. DEMO STAMP OVERLAY ---
+var stampControl = L.control({position: 'topleft'});
+stampControl.onAdd = function(map) {
+    var div = L.DomUtil.create('div', 'demo-stamp');
+    div.innerHTML = "INTERNAL DEMO<br>PENDING APPROVAL";
+    return div;
+};
+stampControl.addTo(map);
     </script>
 </body>
 </html>
